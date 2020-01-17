@@ -5,6 +5,7 @@ const StyledMain = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  color: ${ ({theme}) => theme.primary};
 `;
 
 const Main = () => {
