@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import "normalize.css";
 
 const theme = {
-  primary: "pink"
+  primary: "black"
 };
 
 export default class MyApp extends App {
