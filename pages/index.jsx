@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import { Circle } from "../components/Circle";
 import { HealthBar } from "../components/HealthBar";
+import { useState } from "react";
+import { Controls } from "../components/Controls";
 
 const StyledMain = styled.div`
   display: flex;
@@ -13,10 +15,12 @@ const StyledMain = styled.div`
 `;
 
 const Main = () => {
+  const [health, setHealth] = useState(100);
   return (
     <StyledMain>
       <Circle></Circle>
       <HealthBar></HealthBar>
+      <Controls></Controls>
     </StyledMain>
   );
 };
