@@ -12,6 +12,12 @@ const StyledButton = styled.button`
   color: white;
   border-radius: 3px;
   border: none;
+  font-family: "Alata", sans-serif;
+
+  &:focus {
+    height: 1.8rem;
+    width: 9.8rem;
+  }
 `;
 
 export const Controls = () => {
