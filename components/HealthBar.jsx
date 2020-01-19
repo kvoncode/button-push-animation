@@ -6,10 +6,10 @@ const StyledHealthBar = styled.div`
 
 export const HealthBar = () => {
   const width = 100;
-  const height = 100;
+  const height = 10;
 
   const viewBoxWidth = 100;
-  const viewBoxHeight = 100;
+  const viewBoxHeight = 10;
   return (
     <StyledHealthBar>
       <svg
