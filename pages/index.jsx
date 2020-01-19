@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Svg } from "../components/Svg";
+import { Circle } from "../components/Circle";
 
 const StyledMain = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const StyledMain = styled.div`
 const Main = () => {
   return (
     <StyledMain>
-      <Svg></Svg>
+      <Circle></Circle>
     </StyledMain>
   );
 };

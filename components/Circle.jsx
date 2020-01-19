@@ -25,12 +25,21 @@ const Heart = () => {
   );
 };
 
-export const Svg = () => {
+export const Circle = () => {
+  const width = 100;
+  const height = 100;
+
+  const viewBoxWidth = 100;
+  const viewBoxHeight = 100;
+
   return (
-    <>
-      <Heart></Heart>
-      <Heart></Heart>
-      <Heart></Heart>
-    </>
+    <svg
+      width={`${width}`}
+      height={`${height}`}
+      viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="50" cy="50" r="50" fill="tomato"></circle>
+    </svg>
   );
 };
