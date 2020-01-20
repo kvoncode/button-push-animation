@@ -19,19 +19,22 @@ const StyledButton = styled.button`
   }
 `;
 
-const damage = () => {
-  console.log("damaged");
-};
-
-const heal = () => {
-  console.log("heal");
-};
-
 export const Controls = () => {
+  const damage = () => {
+    console.log("damaged");
+  };
+
+  const heal = () => {
+    console.log("heal");
+  };
   return (
     <StyledControls>
-      <StyledButton onClick={heal}>Heal</StyledButton>
-      <StyledButton onClick={damage}>Inflict Damage</StyledButton>
+      <StyledButton className="anime-pushpop" onClick={heal}>
+        Heal
+      </StyledButton>
+      <StyledButton className="anime-pushpop" onClick={damage}>
+        Inflict Damage
+      </StyledButton>
     </StyledControls>
   );
 };
