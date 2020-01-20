@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import anime from "animejs";
+
 const StyledControls = styled.div`
   display: flex;
 `;
@@ -21,10 +23,18 @@ const StyledButton = styled.button`
 
 export const Controls = () => {
   const damage = () => {
+    anime({
+      targets: "button",
+      translateX: 50,
+      rotate: "1turn",
+      backgroundColor: "#FFF",
+      duration: 4000
+    });
     console.log("damaged");
   };
 
   const heal = () => {
+    
     console.log("heal");
   };
   return (
