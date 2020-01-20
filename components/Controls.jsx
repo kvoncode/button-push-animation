@@ -42,9 +42,9 @@ const AnimatedButton = props => {
   return (
     <StyledButton
       {...props}
-      onClick={() => {
+      onClick={e => {
         props.onClick ? props.onClick() : "";
-        logMe();
+        animate(e);
       }}
     ></StyledButton>
   );
