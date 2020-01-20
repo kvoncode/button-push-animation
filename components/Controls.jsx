@@ -22,19 +22,32 @@ const StyledButton = styled.button`
 `;
 
 const AnimatedButton = props => {
-  const animeConfig = {
-    targets: "button",
-    translateX: 50,
-    rotate: "1turn",
-    backgroundColor: "#FFF",
-    duration: 4000
-  };
+  const animate = e => {
+    // console.log(e.target);
 
-  const animate = () => {
+    const animeConfig = {
+      targets: e.target,
+
+      rotate: "1turn",
+      duration: 2000
+    };
+
     anime(animeConfig);
   };
 
-  return <StyledButton {...props} onMouseDown={animate}></StyledButton>;
+  const logMe = () => {
+    console.log(props);
+  };
+
+  return (
+    <StyledButton
+      {...props}
+      onClick={() => {
+        props.onClick ? props.onClick() : "";
+        logMe();
+      }}
+    ></StyledButton>
+  );
 };
 
 export const Controls = () => {
@@ -48,9 +61,9 @@ export const Controls = () => {
 
   return (
     <StyledControls>
-      <StyledButton onClick={heal}>Heal</StyledButton>
-      <StyledButton onClick={damage}>Inflict Damage</StyledButton>
-      <AnimatedButton onClick={damage}>asd</AnimatedButton>
+      <AnimatedButton onClick={heal}>Heal</AnimatedButton>
+      <AnimatedButton onClick={damage}>Inflict Damage</AnimatedButton>
+      <AnimatedButton>asd</AnimatedButton>
     </StyledControls>
   );
 };
