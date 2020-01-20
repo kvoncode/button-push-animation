@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   border-radius: 3px;
   border: none;
   font-family: "Alata", sans-serif;
-  box-shadow: 1px 2px 1px 1px #ebebeb;
+  box-shadow: 1px 2px 0px 1px #e8e8e8;
 
   &:hover {
     cursor: pointer;
