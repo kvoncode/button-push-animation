@@ -9,16 +9,29 @@ const StyledControls = styled.div`
 const StyledButton = styled.button`
   background: tomato;
   margin: 5px;
-  width: 9rem;
-  height: 2rem;
+  width: 100%;
+  height: 100%;
   color: white;
   border-radius: 3px;
   border: none;
   font-family: "Alata", sans-serif;
+  box-shadow: 1px 2px 1px 1px #ebebeb;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   &:focus {
     outline: 0;
   }
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 9rem;
+  height: 2rem;
 `;
 
 const AnimatedButton = props => {
@@ -28,8 +41,11 @@ const AnimatedButton = props => {
     const animeConfig = {
       targets: e.target,
 
-      rotate: "1turn",
-      duration: 2000
+      width: "8rem",
+      height: "1.8rem",
+      direction: "alternate",
+      fontSize: "0.9rem",
+      duration: 100
     };
 
     anime(animeConfig);
@@ -40,13 +56,15 @@ const AnimatedButton = props => {
   };
 
   return (
-    <StyledButton
-      {...props}
-      onClick={e => {
-        props.onClick ? props.onClick() : "";
-        animate(e);
-      }}
-    ></StyledButton>
+    <ButtonWrapper>
+      <StyledButton
+        {...props}
+        onClick={e => {
+          animate(e);
+          props.onClick ? props.onClick() : "";
+        }}
+      ></StyledButton>
+    </ButtonWrapper>
   );
 };
 
