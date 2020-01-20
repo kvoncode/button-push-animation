@@ -20,9 +20,12 @@ const Main = () => {
   return (
     <StyledMain>
       <Head>
-        <title>My page title</title>
+        <title>Circle Game</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet"></link>
+        <link
+          href="https://fonts.googleapis.com/css?family=Alata&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <Circle></Circle>
       <HealthBar></HealthBar>

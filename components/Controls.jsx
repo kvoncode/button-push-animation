@@ -7,7 +7,7 @@ const StyledControls = styled.div`
 const StyledButton = styled.button`
   background: tomato;
   margin: 5px;
-  width: 10rem;
+  width: 9rem;
   height: 2rem;
   color: white;
   border-radius: 3px;
@@ -15,8 +15,7 @@ const StyledButton = styled.button`
   font-family: "Alata", sans-serif;
 
   &:focus {
-    height: 1.8rem;
-    width: 9.8rem;
+    outline: 0;
   }
 `;
 
