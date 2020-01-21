@@ -71,19 +71,10 @@ const AnimatedButton = props => {
 };
 
 export const Controls = () => {
-  const damage = () => {
-    console.log("damaged");
-  };
-
-  const heal = () => {
-    console.log("heal");
-  };
-
   return (
     <StyledControls>
-      <AnimatedButton onClick={heal}>Heal</AnimatedButton>
-      <AnimatedButton onClick={damage}>Inflict Damage</AnimatedButton>
-      <AnimatedButton>asd</AnimatedButton>
+      <AnimatedButton>Button 1</AnimatedButton>
+      <AnimatedButton>Button 2</AnimatedButton>
     </StyledControls>
   );
 };
