@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import anime from "animejs";
+import { useEffect } from "react";
 
 const StyledControls = styled.div`
   display: flex;
@@ -8,9 +9,8 @@ const StyledControls = styled.div`
 
 const StyledButton = styled.button`
   background: tomato;
-  margin: 5px;
-  width: 100%;
-  height: 100%;
+  width: 9rem;
+  height: 2rem;
   color: white;
   border-radius: 3px;
   border: none;
@@ -32,35 +32,37 @@ const ButtonWrapper = styled.div`
   align-items: center;
   width: 9rem;
   height: 2rem;
+  margin: 0.5rem;
 `;
 
 const AnimatedButton = props => {
-  const animate = e => {
-    // console.log(e.target);
+  const targetRef = React.createRef();
+  const timelineParams = { direction: "alternate", duration: 90 };
+  let timeline;
 
-    const animeConfig = {
-      targets: e.target,
+  // attaching target to animation
+  useEffect(() => {
+    timeline = anime.timeline(timelineParams); // this line request "window" object, so should use inside useEffect
+    console.log(targetRef.current);
+    timeline.add({
+      targets: targetRef.current,
+      scale: 0.9
+    });
+  }, []);
 
-      width: "8rem",
-      height: "1.8rem",
-      direction: "alternate",
-      fontSize: "0.9rem",
-      duration: 100
-    };
-
-    anime(animeConfig);
-  };
-
-  const logMe = () => {
-    console.log(props);
+  const animate = () => {
+    console.log("entered animate()");
+    timeline.restart();
+    console.log("animate() finished");
   };
 
   return (
     <ButtonWrapper>
       <StyledButton
+        ref={targetRef}
         {...props}
         onClick={e => {
-          animate(e);
+          animate();
           props.onClick ? props.onClick() : "";
         }}
       ></StyledButton>
