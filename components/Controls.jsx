@@ -51,9 +51,7 @@ const AnimatedButton = props => {
   }, []);
 
   const animate = () => {
-    console.log("entered animate()");
     timeline.restart();
-    console.log("animate() finished");
   };
 
   return (
